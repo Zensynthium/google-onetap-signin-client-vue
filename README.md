@@ -27,6 +27,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 # Main Configuration
   ### Enviornment Variables
   If you're new to environmental variables make sure you restart the server after updating them (the credentials are NOT refreshed on hot reload).
+  
   Also, environmental variables must be prepended with VUE_APP_ to be imported into Vue 3 Applications, as shown in example.env. Lastly turn example.env into .env.
 
   ### Client ID
