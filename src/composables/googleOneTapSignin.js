@@ -2,6 +2,8 @@ import googleOneTap from 'google-one-tap';
 
 export default function() {
   const axios = require('axios');
+  axios.defaults.withCredentials = true;
+
   const clientID = process.env.VUE_APP_CLIENT_ID
 
   const options = {
