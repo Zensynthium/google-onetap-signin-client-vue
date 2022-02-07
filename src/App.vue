@@ -15,10 +15,10 @@ export default {
     HelloWorld
   },
   setup(){
-    // onMounted(() => {
+    onMounted(() => {
       const { options, oneTapSignin } = googleOneTapSignin()
       oneTapSignin(options)
-    // })
+    })
   }
 }
 </script>
