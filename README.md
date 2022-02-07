@@ -41,3 +41,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
   ### Google-One-Tap Repo
   This is a Vue 3 Example Project utilizing this npm package. There are additional instructions here.
   https://github.com/BurakGur/google-one-tap
+
+  ### Live Demo
+  https://vue-google-onetap-signin-demo.netlify.app/
+  
