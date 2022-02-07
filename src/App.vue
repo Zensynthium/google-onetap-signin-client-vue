@@ -5,11 +5,20 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import googleOneTapSignin from './composables/googleOneTapSignin' 
+
+import { onMounted } from 'vue'
 
 export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  setup(){
+    // onMounted(() => {
+      const { options, oneTapSignin } = googleOneTapSignin()
+      oneTapSignin(options)
+    // })
   }
 }
 </script>
