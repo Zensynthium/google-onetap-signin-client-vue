@@ -40,7 +40,8 @@ export default function() {
 
 	  });
 
-    return userData
+    console.log(userData.value)
+    return userData.value
   }
 
   return { googleOptions, oneTapSignin }
