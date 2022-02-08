@@ -20,25 +20,19 @@ export default {
     HelloWorld
   },
   setup(){
-    // const userData = ref({
-    //   name: '',
-    //   email: '',
-    //   email_verified: '',
-    //   picture: ''
-    // })
-
-    const userData = ref()
-
-    watch(userData, () => {
-      console.log(userData.value)
-    })
+    const realUserData = ref()
 
     onMounted(() => {
-      const { googleOptions, oneTapSignin } = googleOneTapSignin()
+      const { googleOptions, oneTapSignin, userData } = googleOneTapSignin()
       oneTapSignin(googleOptions)
+
+      watch(userData, () => {
+        console.log(userData.value)
+        realUserData.value = userData.value.slice()
+      })
     })
 
-    // return { userData }
+    return { realUserData }
   }
 }
 </script>

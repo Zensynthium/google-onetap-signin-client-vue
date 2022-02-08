@@ -14,11 +14,10 @@ export default function() {
 		context: 'signin', // optional
 	};
   
+  const userData = ref()
 
-	const oneTapSignin = async (options) => {
-    const userData = ref()
-
-    googleOneTap(options, async (res) => {
+	const oneTapSignin = (options) => {
+    googleOneTap(options, (res) => {
 	  	// Send response to server
 	  	// console.log(res);
 
@@ -28,7 +27,7 @@ export default function() {
       }
 
       // Google One-Tap Signin sends a POST request which must be sent to a server to be processed.
-      await axios.post(`${API_URL}/verify-token`, res, axiosOptions)
+      axios.post(`${API_URL}/verify-token`, res, axiosOptions)
         .then(res => {
           // Continue Auth Flow with data from res.data
           console.log(res);
@@ -39,10 +38,7 @@ export default function() {
         });
 
 	  });
-
-    console.log(userData.value)
-    return userData.value
   }
 
-  return { googleOptions, oneTapSignin }
+  return { googleOptions, oneTapSignin, userData }
 }
