@@ -23,7 +23,7 @@ export default function() {
       console.log(CLIENT_URL)
       
       const options = {
-        headers: { "Access-Control-Allow-Origin": 'https://vue-google-onetap-signin-demo.netlify.app/' }
+        headers: { "Access-Control-Allow-Origin": CLIENT_URL }
       }
 
       // Google One-Tap Signin sends a POST request which must be sent to a server to be processed.
