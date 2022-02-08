@@ -1,13 +1,18 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App with Google One-Tap Signin!"/>
+  <p>Name: {{ userData.name}}</p>
+  <p>Email: {{ userData.email }}</p>
+  <p>Email Verified: {{ userData.email_verified }}</p>
+  <img :src="userData.picture" alt="User's Profile Picture">
+
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import googleOneTapSignin from './composables/googleOneTapSignin' 
 
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 
 export default {
   name: 'App',
@@ -15,10 +20,15 @@ export default {
     HelloWorld
   },
   setup(){
+    const userData = ref()
+
     onMounted(() => {
       const { googleOptions, oneTapSignin } = googleOneTapSignin()
-      oneTapSignin(googleOptions)
+      userData.value = oneTapSignin(googleOptions)
+      console.log(userData.value)
     })
+
+    return { userData }
   }
 }
 </script>
