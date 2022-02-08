@@ -33,9 +33,9 @@ export default {
       console.log(userData.value)
     })
 
-    onMounted(() => {
+    onMounted(async () => {
       const { googleOptions, oneTapSignin } = googleOneTapSignin()
-      userData.value = oneTapSignin(googleOptions)
+      userData.value = await oneTapSignin(googleOptions)
     })
 
     // return { userData }
