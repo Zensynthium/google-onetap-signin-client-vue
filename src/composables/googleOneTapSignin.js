@@ -17,12 +17,9 @@ export default function() {
     googleOneTap(options, (res) => {
 	  	// Send response to server
 	  	console.log(res);
-      
-      // This should dynamically grab the current url of the page, though the currentUrl must also be whitelisted on the server side's cors configuration or else it may throw errors
-      const currentUrl = window.location.href
 
       const options = {
-        headers: { "Access-Control-Allow-Origin": currentUrl }
+        headers: { "Access-Control-Allow-Origin": process.env.VUE_APP_CLIENT_URL }
       }
 
       // Google One-Tap Signin sends a POST request which must be sent to a server to be processed.

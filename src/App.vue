@@ -1,7 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App with Google One-Tap Signin!"/>
-  <p>Current Location: {{ window.location.href }}</p>
 </template>
 
 <script>
