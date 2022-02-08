@@ -20,7 +20,12 @@ export default {
     HelloWorld
   },
   setup(){
-    const userData = ref()
+    const userData = ref({
+      name: '',
+      email: '',
+      email_verified: '',
+      picture: ''
+    })
 
     onMounted(() => {
       const { googleOptions, oneTapSignin } = googleOneTapSignin()
