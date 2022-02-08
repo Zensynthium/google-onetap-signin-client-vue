@@ -27,7 +27,7 @@ export default function() {
       const userData = axios.post(`${API_URL}/verify-token`, res, axiosOptions)
         .then(res => {
           // Continue Auth Flow with data from res.data
-          console.log(res);
+          // console.log(res);
           return res.data
         })
         .catch(error => {
@@ -37,6 +37,7 @@ export default function() {
         return userData
 	  });
 
+    console.log(userData)
     return userData
   }
 
