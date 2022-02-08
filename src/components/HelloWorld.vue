@@ -28,7 +28,8 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
     <h3>Demo Github Repo</h3><br/>
-    <a href="https://github.com/Zensynthium/vue-google-onetap-signin" target="_blank" rel="noopener noreferrer">https://github.com/Zensynthium/vue-google-onetap-signin</a>
+    <a href="https://github.com/Zensynthium/vue-google-onetap-signin" target="_blank" rel="noopener noreferrer">Frontend: https://github.com/Zensynthium/vue-google-onetap-signin</a>
+    <a href="https://github.com/Zensynthium/google-one-tap-server" target="_blank" rel="noopener noreferrer">Backend: https://github.com/Zensynthium/google-one-tap-server</a>
     <h3>Google Profile Information</h3>
     <p>This information will populate after the Google One-Tap Signin is completed.</p>
     <img :title="googleUserData.name" :src="googleUserData.picture" alt="User's Profile Picture">
