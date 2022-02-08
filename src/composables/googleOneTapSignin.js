@@ -18,8 +18,9 @@ export default function() {
 	const oneTapSignin = (options) => {
     googleOneTap(options, (res) => {
 	  	// Send response to server
-	  	console.log(res);
+	  	// console.log(res);
 
+      // Access-Control-Allow-Origin is mandatory as this is a "Complex" request. This must match the "origin" in the CorsOptions in the backend, or it will fail the preflight.
       const axiosOptions = {
         headers: { "Access-Control-Allow-Origin": CLIENT_URL }
       }
