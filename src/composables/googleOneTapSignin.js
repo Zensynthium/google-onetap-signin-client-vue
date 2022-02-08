@@ -4,10 +4,12 @@ export default function() {
   const axios = require('axios');
   // axios.defaults.withCredentials = true;
 
-  const clientID = process.env.VUE_APP_CLIENT_ID
+  const CLIENT_ID = process.env.VUE_APP_CLIENT_ID
+  const CLIENT_URL = process.env.VUE_APP_CLIENT_URL
+  const API_URL = process.env.VUE_APP_API_URL
 
   const options = {
-		client_id: clientID, // required
+		client_id: CLIENT_ID, // required
 		auto_select: false, // optional
 		cancel_on_tap_outside: true, // optional
 		context: 'signin', // optional
@@ -18,14 +20,14 @@ export default function() {
 	  	// Send response to server
 	  	console.log(res);
 
-      console.log(process.env.VUE_APP_CLIENT_URL)
+      console.log(CLIENT_URL)
       
       const options = {
-        headers: { "Access-Control-Allow-Origin": process.env.VUE_APP_CLIENT_URL }
+        headers: { "Access-Control-Allow-Origin": 'https://vue-google-onetap-signin-demo.netlify.app/' }
       }
 
       // Google One-Tap Signin sends a POST request which must be sent to a server to be processed.
-      axios.post(`${process.env.VUE_APP_API_URL}verify-token`, res, options)
+      axios.post(`${API_URL}verify-token`, res, options)
         .then(res => {
           console.log(res);
         })
