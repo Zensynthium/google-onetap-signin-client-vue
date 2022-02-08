@@ -12,7 +12,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import googleOneTapSignin from './composables/googleOneTapSignin' 
 
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 
 export default {
   name: 'App',
@@ -29,10 +29,13 @@ export default {
 
     const userData = ref()
 
+    watch(userData, () => {
+      console.log(userData.value)
+    })
+
     onMounted(() => {
       const { googleOptions, oneTapSignin } = googleOneTapSignin()
       userData.value = oneTapSignin(googleOptions)
-      console.log(userData.value)
     })
 
     // return { userData }
