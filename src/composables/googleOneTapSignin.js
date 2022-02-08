@@ -1,5 +1,6 @@
 import googleOneTap from 'google-one-tap';
 import axios from 'axios';
+import { ref } from 'vue';
 
 export default function() {
   const CLIENT_ID = process.env.VUE_APP_CLIENT_ID
@@ -13,8 +14,11 @@ export default function() {
 		context: 'signin', // optional
 	};
   
-	const oneTapSignin = async (options) => {
-    const userData = await googleOneTap(options, (res) => {
+
+	const oneTapSignin = (options) => {
+    const userData = ref()
+
+    googleOneTap(options, (res) => {
 	  	// Send response to server
 	  	// console.log(res);
 
@@ -24,20 +28,18 @@ export default function() {
       }
 
       // Google One-Tap Signin sends a POST request which must be sent to a server to be processed.
-      const userData = axios.post(`${API_URL}/verify-token`, res, axiosOptions)
+      axios.post(`${API_URL}/verify-token`, res, axiosOptions)
         .then(res => {
           // Continue Auth Flow with data from res.data
-          // console.log(res);
-          return res.data
+          console.log(res);
+          userData.value = res.data
         })
         .catch(error => {
           console.log(error);
         });
 
-        return userData
 	  });
 
-    console.log(userData)
     return userData
   }
 
