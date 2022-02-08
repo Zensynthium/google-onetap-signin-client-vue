@@ -16,8 +16,8 @@ export default {
   },
   setup(){
     onMounted(() => {
-      const { options, oneTapSignin } = googleOneTapSignin()
-      oneTapSignin(options)
+      const { googleOptions, oneTapSignin } = googleOneTapSignin()
+      oneTapSignin(googleOptions)
     })
   }
 }

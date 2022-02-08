@@ -8,7 +8,7 @@ export default function() {
   const CLIENT_URL = process.env.VUE_APP_CLIENT_URL
   const API_URL = process.env.VUE_APP_API_URL
 
-  const options = {
+  const googleOptions = {
 		client_id: CLIENT_ID, // required
 		auto_select: false, // optional
 		cancel_on_tap_outside: true, // optional
@@ -20,15 +20,12 @@ export default function() {
 	  	// Send response to server
 	  	console.log(res);
 
-      const options = {
-        // url: API_URL,
-        // method: 'post',
-        headers: { "Access-Control-Allow-Origin": CLIENT_URL },
-        // withCredentials: true,
+      const axiosOptions = {
+        headers: { "Access-Control-Allow-Origin": CLIENT_URL }
       }
 
       // Google One-Tap Signin sends a POST request which must be sent to a server to be processed.
-      axios.post(`${API_URL}/verify-token`, res, options)
+      axios.post(`${API_URL}/verify-token`, res, axiosOptions)
         .then(res => {
           console.log(res);
         })
@@ -38,6 +35,6 @@ export default function() {
 	  });
   }
 
-  return { options, oneTapSignin }
+  return { googleOptions, oneTapSignin }
 }
 
