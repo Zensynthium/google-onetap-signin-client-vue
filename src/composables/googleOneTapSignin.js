@@ -21,7 +21,12 @@ export default function() {
 	  	console.log(res);
 
       const options = {
-        headers: { "Access-Control-Allow-Origin": CLIENT_URL }
+        url: API_URL,
+        method: 'post',
+        headers: { 
+          "Access-Control-Allow-Origin": CLIENT_URL, 
+        },
+        withCredentials: true,
       }
 
       // Google One-Tap Signin sends a POST request which must be sent to a server to be processed.
