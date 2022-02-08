@@ -1,10 +1,10 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App with Google One-Tap Signin!"/>
-  <!-- <p>Name: {{ userData.name}}</p>
-  <p>Email: {{ userData.email }}</p>
-  <p>Email Verified: {{ userData.email_verified }}</p>
-  <img :src="userData.picture" alt="User's Profile Picture"> -->
+  <p>Name: {{ googleUserData.name}}</p>
+  <p>Email: {{ googleUserData.email }}</p>
+  <p>Email Verified: {{ googleUserData.email_verified }}</p>
+  <img :src="googleUserData.picture" alt="User's Profile Picture">
 
 </template>
 
@@ -20,7 +20,12 @@ export default {
     HelloWorld
   },
   setup(){
-    const realUserData = ref()
+    const googleUserData = ref({
+      name: '',
+      email: '',
+      email_verified: '',
+      picture: ''
+    })
 
     onMounted(() => {
       const { googleOptions, oneTapSignin, userData } = googleOneTapSignin()
@@ -28,11 +33,11 @@ export default {
 
       watch(userData, () => {
         console.log(userData.value)
-        realUserData.value = userData.value.slice()
+        googleUserData.value = userData.value
       })
     })
 
-    return { realUserData }
+    return { googleUserData }
   }
 }
 </script>
