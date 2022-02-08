@@ -30,7 +30,8 @@
     <h3>Demo Github Repo</h3><br/>
     <a href="https://github.com/Zensynthium/vue-google-onetap-signin" target="_blank" rel="noopener noreferrer">https://github.com/Zensynthium/vue-google-onetap-signin</a>
     <h3>Google Profile Information</h3>
-    <img v-show="googleUserData.picture" :title="googleUserData.name" :src="googleUserData.picture" alt="User's Profile Picture">
+    <p>This information will populate after the Google One-Tap Signin is completed.</p>
+    <img :title="googleUserData.name" :src="googleUserData.picture" alt="User's Profile Picture">
     <p>Name: {{ googleUserData.name}}</p>
     <p>Email: {{ googleUserData.email }}</p>
     <p>Email Verified: {{ googleUserData.email_verified }}</p>
