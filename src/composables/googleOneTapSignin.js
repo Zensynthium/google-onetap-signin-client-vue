@@ -18,6 +18,8 @@ export default function() {
 	  	// Send response to server
 	  	console.log(res);
 
+      console.log(process.env.VUE_APP_CLIENT_URL)
+      
       const options = {
         headers: { "Access-Control-Allow-Origin": process.env.VUE_APP_CLIENT_URL }
       }
