@@ -37,4 +37,3 @@ export default function() {
 
   return { googleOptions, oneTapSignin }
 }
-
