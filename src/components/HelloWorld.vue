@@ -39,8 +39,7 @@
 </template>
 
 <script>
-import googleOneTapSignin from './composables/googleOneTapSignin' 
-
+import googleOneTapSignin from '../composables/googleOneTapSignin' 
 import { onMounted, ref, watch } from 'vue'
 
 export default {
