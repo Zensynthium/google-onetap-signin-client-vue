@@ -26,7 +26,7 @@ export default function() {
       }
 
       // Google One-Tap Signin sends a POST request which must be sent to a server to be processed.
-      axios.post(`${process.env.VUE_APP_API_URL}verify-token`, res)
+      axios.post(`${process.env.VUE_APP_API_URL}verify-token`, res, options)
         .then(res => {
           console.log(res);
         })
