@@ -13,8 +13,8 @@ export default function() {
 		context: 'signin', // optional
 	};
   
-	const oneTapSignin = (options) => {
-    const userData = googleOneTap(options, (res) => {
+	const oneTapSignin = async (options) => {
+    const userData = await googleOneTap(options, (res) => {
 	  	// Send response to server
 	  	// console.log(res);
 
