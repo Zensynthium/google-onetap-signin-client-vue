@@ -29,14 +29,43 @@
     </ul>
     <h3>Demo Github Repo</h3><br/>
     <a href="https://github.com/Zensynthium/vue-google-onetap-signin" target="_blank" rel="noopener noreferrer">https://github.com/Zensynthium/vue-google-onetap-signin</a>
+    <h3>Google Profile Information</h3>
+    <img v-show="googleUserData.picture" :title="googleUserData.name" :src="googleUserData.picture" alt="User's Profile Picture">
+    <p>Name: {{ googleUserData.name}}</p>
+    <p>Email: {{ googleUserData.email }}</p>
+    <p>Email Verified: {{ googleUserData.email_verified }}</p>
   </div>
 </template>
 
 <script>
+import googleOneTapSignin from './composables/googleOneTapSignin' 
+
+import { onMounted, ref, watch } from 'vue'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  setup(){
+    const googleUserData = ref({
+      name: '',
+      email: '',
+      email_verified: '',
+      picture: ''
+    })
+
+    onMounted(() => {
+      const { googleOptions, oneTapSignin, userData } = googleOneTapSignin()
+      oneTapSignin(googleOptions)
+
+      watch(userData, () => {
+        console.log(userData.value)
+        googleUserData.value = userData.value
+      })
+    })
+
+    return { googleUserData }
   }
 }
 </script>
