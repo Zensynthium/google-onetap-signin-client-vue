@@ -20,14 +20,12 @@ export default function() {
 	  	// Send response to server
 	  	console.log(res);
 
-      console.log(CLIENT_URL)
-      
       const options = {
         headers: { "Access-Control-Allow-Origin": CLIENT_URL }
       }
 
       // Google One-Tap Signin sends a POST request which must be sent to a server to be processed.
-      axios.post(`${API_URL}verify-token`, res, options)
+      axios.post(`${API_URL}/verify-token`, res, options)
         .then(res => {
           console.log(res);
         })
