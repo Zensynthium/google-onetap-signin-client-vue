@@ -35,9 +35,9 @@ https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid
 
 ### Google One-Tap Signin Server
 Here's a sample repo with the server setup to listen on the route /verify-token (route can also be set to anything)
-https://example.com
+https://github.com/Zensynthium/google-onetap-server
 
-### Google-One-Tap Repo
+### Google-One-Tap Library Repo
 This is a Vue 3 Example Project utilizing this npm package. There are additional instructions here.
 https://github.com/BurakGur/google-one-tap
 
