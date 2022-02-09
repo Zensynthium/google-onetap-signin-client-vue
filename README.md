@@ -25,6 +25,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 # Main Configuration
+### Importing the Functionality
+The main file that does all the work is the googleOneTapSignin.js located in src/composables. Looking at the HelloWorld.vue component it should be relatively easy to integrate into your project once all of the configuration below is completed.
 ### Enviornment Variables
 If you're new to environmental variables make sure you restart the server after updating them (the credentials are NOT refreshed on hot reload).
 
@@ -43,4 +45,3 @@ https://github.com/BurakGur/google-one-tap
 
 ### Live Demo
 https://vue-google-onetap-signin-demo.netlify.app/
-  

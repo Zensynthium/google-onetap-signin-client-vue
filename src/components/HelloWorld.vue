@@ -55,7 +55,7 @@ export default {
       email_verified: '',
       picture: ''
     })
-
+    
     onMounted(() => {
       const { googleOptions, oneTapSignin, userData } = googleOneTapSignin()
       oneTapSignin(googleOptions)
